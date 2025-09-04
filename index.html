@@ -126,13 +126,14 @@
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	        </ul>
+      <ul class="navbar-nav nav ml-auto">
+        <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+        <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+        <li class="nav-item"><a href="#EXPERIENCE" class="nav-link"><span>Experience</span></a></li>
+        <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+        <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+      </ul>
+ 
 	      </div>
 	    </div>
 	  </nav>
@@ -191,8 +192,12 @@
 			            <h2>A Data Analyst</h2>
 						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
 						<!-- <br> -->
-			            <p><a href="https://www.linkedin.com/in/pankaj-kumar-472a29294/" class="btn btn-primary py-3 px-4">Linkedin</a> 
-							<a href="https://github.com/PANKAJ955956" class="btn btn-white btn-outline-white py-3 px-4">@GitHub</a></p>
+			            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <a href="https://www.linkedin.com/in/pankaj-kumar-472a29294/" class="btn btn-primary py-3 px-4">LinkedIn</a>
+                    <a href="https://github.com/PANKAJ955956" class="btn btn-white btn-outline-white py-3 px-4">@GitHub</a>
+                    <a href="https://leetcode.com/u/PankajKumar_DS/" class="btn btn-primary py-3 px-4">LeetCode</a>
+                  </div>
+
 		            </div>
 		          </div>
 	        	</div>
@@ -311,12 +316,13 @@
 
 	
     <!-- EXPERIENCE Section -->
+<!-- EXPERIENCE Section -->
 <section id="EXPERIENCE" class="EXPERIENCE-section">
   <div class="container">
     <h2 class="section-title">EXPERIENCE</h2>
     <p class="section-subtitle">Here is my professional journey highlighting internships, training programs, and certifications.</p>
 
-    <div class="EXPERIENCE-grid">
+    <div class="EXPERIENCE-row">
       
       <!-- IBM – NASSCOM Web Development Intern -->
       <div class="EXPERIENCE-card">
@@ -324,9 +330,21 @@
         <h2 class="EXPERIENCE-role">Web Development Intern</h2>
         <h4 class="EXPERIENCE-company">IBM – NASSCOM (PBEL)</h4>
         <p>
-          Contributed as a Web Development Intern under the IBM–NASSCOM PBEL program, completing 60+ hours of experiential training. 
+          Contributed as a Web Development Intern under the IBM–NASSCOM PBEL program, completing <strong>60+ hours</strong> of experiential training. 
           Designed and developed a full-stack <strong>Advanced Weather Web Application</strong> integrating real-time APIs, responsive UI, and cloud deployment. 
           Collaborated on Agile workflows and demonstrated expertise in <span class="highlight">HTML, CSS, JavaScript, Node.js, MongoDB, REST APIs</span>.
+        </p>
+      </div>
+
+      <!-- Labmentix – Data Analyst Intern -->
+      <div class="EXPERIENCE-card">
+        <h3 class="EXPERIENCE-date">Aug 2025 – Sep 2025</h3>
+        <h2 class="EXPERIENCE-role">Data Analyst Intern</h2>
+        <h4 class="EXPERIENCE-company">Labmentix</h4>
+        <p>
+          Worked as a Data Analyst Intern at Labmentix, analyzing <strong>10,000+ records</strong> across multiple datasets. 
+          Gained hands-on experience in <span class="highlight">data analytics tools, SQL, Python, and visualization techniques</span>. 
+          Applied statistical methods and <span class="highlight">machine learning models</span> to extract insights, automate reports, and build dashboards improving efficiency by <strong>25%</strong>.
         </p>
       </div>
 
@@ -336,9 +354,9 @@
         <h2 class="EXPERIENCE-role">Machine Learning Intern</h2>
         <h4 class="EXPERIENCE-company">IBM</h4>
         <p>
-          Worked on developing ML models for data-driven decision-making. 
-          Performed <span class="highlight">data wrangling, EDA, and visualization</span> using Python, Pandas, and Matplotlib. 
-          Built and deployed ML models with Flask & Cloud, improving prediction accuracy by <strong>15%</strong>. 
+          Built and deployed <strong>5+ ML models</strong> for data-driven decision-making. 
+          Performed <span class="highlight">data wrangling, EDA, and visualization</span> on <strong>50,000+ data points</strong> using Python, Pandas, and Matplotlib. 
+          Deployed ML models with Flask & Cloud, improving prediction accuracy by <strong>15%</strong>. 
           Enhanced proficiency in SQL, Scikit-Learn, and automation workflows.
         </p>
       </div>
@@ -349,9 +367,9 @@
         <h2 class="EXPERIENCE-role">Data Science Intern</h2>
         <h4 class="EXPERIENCE-company">YBI Foundation</h4>
         <p>
-          Completed a 6-month Data Science Internship, gaining hands-on experience in <span class="highlight">data analysis, visualization, and machine learning</span>. 
-          Worked on real-world projects using Python, SQL, and AI techniques. 
-          Strengthened knowledge of predictive modeling, EDA, and business problem-solving.
+          Completed a <strong>6-month internship</strong> working on <strong>4 real-world projects</strong> in <span class="highlight">data analysis, visualization, and machine learning</span>. 
+          Used Python, SQL, and AI techniques to design predictive models and automated workflows. 
+          Strengthened knowledge of EDA and improved business problem-solving with <strong>90% accurate predictions</strong>.
         </p>
       </div>
 
@@ -363,7 +381,7 @@
 <style>
 .EXPERIENCE-section {
   padding: 60px 20px;
-  background: #000; /* dark background */
+  background: #000;
   color: #eee;
   font-family: Arial, sans-serif;
 }
@@ -382,16 +400,22 @@
   color: #aaa;
 }
 
-.EXPERIENCE-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+/* Horizontal scroll row */
+.EXPERIENCE-row {
+  display: flex;
   gap: 25px;
+  overflow-x: auto;
+  padding-bottom: 15px;
+  scrollbar-width: thin;
 }
 
 .EXPERIENCE-card {
   background: #1a1a1a;
+  min-width: 300px;
+  max-width: 350px;
   padding: 25px;
   border-radius: 10px;
+  flex: 0 0 auto;
   transition: 0.3s;
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
@@ -404,7 +428,7 @@
 .EXPERIENCE-date {
   font-size: 18px;
   font-weight: bold;
-  color: #f1c40f; /* yellow highlight */
+  color: #f1c40f;
   margin-bottom: 8px;
 }
 
@@ -430,10 +454,11 @@
 }
 
 .highlight {
-  color: #f1c40f; /* yellow highlight */
+  color: #f1c40f;
   font-weight: 600;
 }
 </style>
+
 
 
 		<br>
@@ -452,7 +477,7 @@
             <span class="date">2023 – 2026</span>
             <h2>Bachelor of Technology (B.Tech)</h2>
             <span class="position">SRMCEM, Lucknow</span>
-            <p class="mt-4">Specialization: Computer Science & Engineering(Data Science)<br>Grade: First Class Distinction</p>
+            <p class="mt-4">Specialization: Computer Science & Engineering(Data Science)<br>Grade: First Class Distinction  (8.6 CGPA)</p>
         </div>
     </div>
 
@@ -568,43 +593,59 @@
 	  </div>
     </section>
 
-	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-      <div class="container">
-		<div class="row d-md-flex align-items-center">
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="20">0</strong>
-                <span>Achievements</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="30">0</strong>
-                <span>Projects</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="1000">0</strong>
-                <span>Mentored Students</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="500">0</strong>
-                <span>Cups of coffee</span>
-              </div>
-            </div>
+<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+  <div class="container">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text">
+            <strong class="number" data-number="20">0</strong>
+            <span>Achievements</span>
           </div>
         </div>
       </div>
+
+      <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text">
+            <strong class="number" data-number="40">0</strong>
+            <span>Projects Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text">
+            <strong class="number" data-number="1000">0</strong>
+            <span>Hours of Coding</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text">
+            <strong class="number" data-number="30">0</strong>
+            <span>Certifications Earned</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text">
+            <strong class="number" data-number="20">0</strong>
+            <span>Happy Clients / Mentors</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 	
 	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
 			<!-- <div class="container"> -->
@@ -703,18 +744,22 @@
 
  
 	
-    <footer class="ftco-footer ftco-section">
-		<div class="container">
-		  <div class="row">
-			<div class="col-md-12 text-center">
-  
-			  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-			</div>
-		  </div>
-		</div>
-	  </footer>
+<!-- Footer Start -->
+<footer style="background:#111; color:#fff; padding:40px 20px; text-align:center; position:relative;">
+
+  <!-- Project/Credit -->
+  <p style="margin-bottom:20px; font-size:16px;">
+    ©2025 All rights reserved | Made with ❤️ by 
+    <a href="https://www.linkedin.com/in/pankaj-kumar-472a29294/" target="_blank" style="color:#0e76a8; text-decoration:none;">Pankaj Kumar</a>
+  </p>
+
+
+  <!-- Back to Top Button -->
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" 
+          style="position:fixed; bottom:20px; right:20px; padding:10px 15px; background:#ff9800; border:none; border-radius:50%; cursor:pointer; font-size:18px; color:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.3);">
+    ↑
+  </button>
+</footer>
 
 
   <!-- loader -->
