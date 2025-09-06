@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>PANKAJ KUMAR Portfolio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Portfolio of Pankaj Kumar | Data Analyst | SQL, Python, Power BI, Machine Learning">
     <meta name="keywords" content="Pankaj Kumar, Data Analyst, SQL, Python, Power BI, Machine Learning, Portfolio">
 
@@ -24,6 +25,8 @@
     <link rel="stylesheet" href="css/style.css">
 
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <style>
 
@@ -112,6 +115,23 @@
 
 
 </style>
+<script>
+document.querySelectorAll('.number').forEach(num => {
+  let target = +num.getAttribute('data-number');
+  let count = 0;
+  let step = target / 100;
+
+  let update = setInterval(() => {
+    count += step;
+    if (count >= target) {
+      num.textContent = target;
+      clearInterval(update);
+    } else {
+      num.textContent = Math.floor(count);
+    }
+  }, 30);
+});
+</script>
 
 
   </head>
@@ -126,158 +146,80 @@
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
-      <ul class="navbar-nav nav ml-auto">
-        <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-        <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-        <li class="nav-item"><a href="#EXPERIENCE" class="nav-link"><span>Experience</span></a></li>
-        <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-        <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-      </ul>
- 
+	        <ul class="navbar-nav nav ml-auto">
+	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+	          <li class="nav-item"><a href="#EXPERIENCE" class="nav-link"><span>EXPERIENCE</span></a></li>
+	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+	        </ul>
 	      </div>
 	    </div>
 	  </nav>
-<section id="home-section" class="hero">
-<style>
-/* Typing animation container */
-#typing-animation {
-  font-size: 28px;
-  font-weight: bold;
-  color: #ffffff;
-  border-right: 3px solid #ffbd39; /* blinking cursor */
-  white-space: nowrap;
-  overflow: hidden;
-  width: fit-content;
-  animation: blink 0.7s infinite;
-  margin-top: 10px;
-}
+	  <section id="home-section" class="hero">
+		  <div class="home-slider  owl-carousel">
+	       <div class="slider-item ">
+	      	<div class="overlay"></div>
+	         <div class="container">
+	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/pankaj.jpg);">
+	          	 <div class="overlay"></div>
+	          	</div>
+		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+		          	<div class="text">
+		          		<span class="subheading">Hello!</span>
+			            <h1 class="mb-4 mt-3">I'm <span>PANKAJ KUMAR</span></h1>
 
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-</style>
+						<!-- Element to contain animated typing -->
+						<span id="typing-animation"></span>
 
-<script>
-const typingElement = document.getElementById("typing-animation");
-const typingTexts = ["Student", "Engineer", "Analyst"];
-let textIndex = 0;
-let charIndex = 0;
+						<script>
 
-function typeEffect() {
-  if (charIndex < typingTexts[textIndex].length) {
-    typingElement.textContent += typingTexts[textIndex].charAt(charIndex);
-    charIndex++;
-    setTimeout(typeEffect, 150);
-  } else {
-    setTimeout(eraseEffect, 1200); // wait before erasing
-  }
-}
+						// Initialize the typing animation
+						const typingAnimationElement = document.getElementById('typing-animation');
 
-function eraseEffect() {
-  if (charIndex > 0) {
-    typingElement.textContent = typingTexts[textIndex].substring(0, charIndex - 1);
-    charIndex--;
-    setTimeout(eraseEffect, 100);
-  } else {
-    textIndex = (textIndex + 1) % typingTexts.length; // move to next word
-    setTimeout(typeEffect, 300);
-  }
-}
+						// Create an array of typing text
+						const typingTexts = [
+						'Students  ',
+						'Engineer  ',
+						'Analyst   ',
+						];
 
-document.addEventListener("DOMContentLoaded", function () {
-  typeEffect();
-});
-</script>
+						// Create a function to display the typing animation for a given text
+						function playTypingAnimation(text) {
+						// Loop through each character and add it to the element
+						for (let i = 0; i < text.length; i++) {
+							setTimeout(() => {
+							typingAnimationElement.textContent += text[i];
+							}, i * 200); // Increase the delay to slow down the typing animation
+						}
 
+						// Once the animation is complete, reset the text and start over
+						setTimeout(() => {
+							typingAnimationElement.textContent = '';
+							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+						}, text.length * 200);
+						}
 
-  <div class="home-slider owl-carousel">
-    <div class="slider-item">
-      <div class="container">
-        <div
-          class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
-          data-scrollax-parent="true"
-        >
-          <!-- Image Section -->
-          <div
-            class="one-third js-fullheight order-md-last img"
-            style="background-image:url(images/pankaja.jpg);"
-          >
-            <div class="overlay"></div>
-          </div>
+						// Start the typing animation loop
+						playTypingAnimation(typingTexts[0]);
 
-          <!-- Text Section -->
-          <div
-            class="one-forth d-flex align-items-center ftco-animate"
-            data-scrollax=" properties: { translateY: '70%' }"
-          >
-            <div class="text">
-              <span class="subheading">Namste!</span>
-              <h1 class="mb-4 mt-3">I'm <span>PANKAJ KUMAR</span></h1>
+						</script>
 
-              <!-- Element to contain animated typing -->
-              <span id="typing-animation"></span>
-
-              <script>
-                // Initialize the typing animation
-                const typingAnimationElement =
-                  document.getElementById("typing-animation");
-
-                // Function to play typing animation
-                function playTypingAnimation(text) {
-                  for (let i = 0; i < text.length; i++) {
-                    setTimeout(() => {
-                      typingAnimationElement.textContent += text[i];
-                    }, i * 200);
-                  }
-
-                  setTimeout(() => {
-                    typingAnimationElement.textContent = "";
-                    playTypingAnimation(
-                      typingTexts[
-                        (typingTexts.indexOf(text) + 1) % typingTexts.length
-                      ]
-                    );
-                  }, text.length * 200);
-                }
-
-                // Start the typing animation
-                playTypingAnimation(typingTexts[0]);
-              </script>
-              <!-- Removed redeclaration of typingTexts and reused the existing variable -->
-              <!-- The second script block is not needed, as the typing animation is already handled above -->
-              <br /><br />
-              <h2>A Data Analyst</h2>
-
-              <!-- Social Buttons -->
-              <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content:center;">
-                <a
-                  href="https://www.linkedin.com/in/pankaj-kumar-472a29294/"
-                  class="btn btn-primary py-3 px-4"
-                  >LinkedIn</a
-                >
-                <a
-                  href="https://github.com/PANKAJ955956"
-                  class="btn btn-white btn-outline-white py-3 px-4"
-                  >@GitHub</a
-                >
-                <a
-                  href="https://leetcode.com/u/PankajKumar_DS/"
-                  class="btn btn-primary py-3 px-4"
-                  >LeetCode</a
-                >
-              </div>
-            </div>
-          </div>
-          <!-- End Text -->
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+						<br>
+						<br>
+			            <h2>A  Data Analyst</h2>
+						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
+						<!-- <br> -->
+			            <p><a href="https://www.linkedin.com/in/pankaj-kumar-472a29294/" class="btn btn-primary py-3 px-4">Linkedin</a> 
+							<a href="https://github.com/PANKAJ955956" class="btn btn-white btn-outline-white py-3 px-4">GitHub</a></p>
+		            </div>
+		          </div>
+	        	</div>
+	        </div>
+	      </div>
+		</div>
+    </section>
 
 
 
@@ -350,7 +292,7 @@ document.addEventListener("DOMContentLoaded", function () {
 								<h2 class="mb-4">About Me</h2>
 								
 								<p> Aspiring Data Scientist & Analyst currently pursuing 
-        <b>Bachelor of Technology in Computer Science & Engineering (Specialization in Data Science)</b> 
+        <b>Bachelor of Technology in Computer Science (Specialization in Data Science)</b> 
         at Shri Ramswaroop Memorial College of Engineering and Management.  
         Proficient in Python, SQL, Power BI, and Machine Learning with hands-on 
         experience through internships and academic projects.  
@@ -359,11 +301,11 @@ document.addEventListener("DOMContentLoaded", function () {
 								<ul class="about-info mt-4 px-md-0 px-2">
 									<li class="d-flex"><span>Profile:</span> <span>Data Science &amp; Analytics</span></li>
 									<li class="d-flex"><span>Domain:</span> <span>Retail, Ecommerce, Healthcare &amp; AeroSpace Science</span></li>
-									<li class="d-flex"><span>Education:</span> <span>Bachelor of Technology [CSE(DS)]</span></li>
+									<li class="d-flex"><span>Education:</span> <span>Bachelor of Technology</span></li>
 									<li class="d-flex"><span>Language:</span> <span>English, Hindi</span></li>
 									<li class="d-flex"><span>BI Tools:</span> <span>Microsoft Power BI, Looker &amp; Tableau</span></li>
 									<li class="d-flex"><span>Other Skills:</span> <span>Cloud, PySpark, Excel, Git, JIRA, Google Analytics &amp; SEO</span></li>
-									<li class="d-flex"><span>Interest:</span> <span>Traveling, Travel Photography,Playing Cricket,Teaching</span></li>
+									<li class="d-flex"><span>Interest:</span> <span>Traveling, Travel Photography, Teaching</span></li>
 									
 								</ul>
 							</div>
@@ -388,7 +330,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 	
-    <!-- EXPERIENCE Section -->
 <!-- EXPERIENCE Section -->
 <section id="EXPERIENCE" class="EXPERIENCE-section">
   <div class="container">
@@ -532,8 +473,6 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 </style>
 
-
-
 		<br>
 		<br>
 
@@ -574,9 +513,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </div>
 </div>
-
-
-    		<div class="row justify-content-center mt-5">
+        		<div class="row justify-content-center mt-5">
     			<div class="col-md-6 text-center ftco-animate">
     				<p>+
                        <a href="https://drive.google.com/file/d/1E0oPO15CXq-uegVYp1uFySJW6Z7wGO_s/view?usp=drive_link" 
@@ -666,6 +603,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	  </div>
     </section>
 
+
 <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
   <div class="container">
     <div class="row d-flex justify-content-center align-items-center">
@@ -717,8 +655,6 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </div>
 </section>
-
-
 	
 	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
 			<!-- <div class="container"> -->
@@ -782,13 +718,12 @@ document.addEventListener("DOMContentLoaded", function () {
           		</div>
           		<h3 class="mb-4">Download Resume</h3>
 	            <p>
-                  <a href="https://drive.google.com/file/d/1E0oPO15CXq-uegVYp1uFySJW6Z7wGO_s/view?usp=drive_link" 
-                   target="_blank" 
-                   class="btn btn-primary">
-                   <i class="fas fa-file-download"></i> Download My Resume
-                  </a>
+                   <a href="https://drive.google.com/file/d/1E0oPO15CXq-uegVYp1uFySJW6Z7wGO_s/view?usp=drive_link" 
+                     target="_blank" 
+                     class="btn btn-primary py-4 px-5">
+                      Download CV
+                   </a>
                 </p>
-
 	          </div>
           </div>
 
@@ -797,7 +732,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			<br>
 			<div class="row justify-content-center">
 				<div class="col-md-7 ftco-animate text-center">
-					<h2>Have a<span> Question?  </span> <a href="https://docs.google.com/forms/d/1s8aKCQLbrkUXJR9unYHqDhbqe0umy-E_9QFhr0umJC8/edit" class="btn btn-primary py-3 px-5">Click Here</a> </h2>
+					<h2>Have a<span> Question?  </span> <a href="https://forms.gle/pPWiK7b5EDmb2uBs7" class="btn btn-primary py-3 px-5">Click Here</a> </h2>
 				</div>
 			</div>
 				<br>
@@ -805,8 +740,7 @@ document.addEventListener("DOMContentLoaded", function () {
 					  <li class="ftco-animate normal-txt">Find me on  </li>
 					  <li class="ftco-animate"><a href="https://www.youtube.com/@PANKAJKUMAR-cc5er"><span class="icon-youtube"></span></a></li>
 					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/pankaj-kumar-472a29294/"><span class="icon-linkedin"></span></a></li>  
-					  <li class="ftco-animate"><a href="https://github.com/PANKAJ955956"><span class="icon-github"></span>
-</a></li>
+					  <li class="ftco-animate"><a href="https://github.com/PANKAJ955956"><span class="icon-github"></span></a></li>
 				      <li class="ftco-animate"><a href="https://www.instagram.com/its_pankaj_thakur09/"><span class="icon-instagram"></span></a></li>
 					</ul>
 				<br>
@@ -817,22 +751,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
  
 	
-<!-- Footer Start -->
-<footer style="background:#111; color:#fff; padding:40px 20px; text-align:center; position:relative;">
-
-  <!-- Project/Credit -->
-  <p style="margin-bottom:20px; font-size:16px;">
-    ©2025 All rights reserved | Made with ❤️ by 
-    <a href="https://www.linkedin.com/in/pankaj-kumar-472a29294/" target="_blank" style="color:#0e76a8; text-decoration:none;">Pankaj Kumar</a>
-  </p>
-
-
-  <!-- Back to Top Button -->
-  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" 
-          style="position:fixed; bottom:20px; right:20px; padding:10px 15px; background:#ff9800; border:none; border-radius:50%; cursor:pointer; font-size:18px; color:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.3);">
-    ↑
-  </button>
-</footer>
+    <footer class="ftco-footer ftco-section">
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-12 text-center">
+  
+			  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+			</div>
+		  </div>
+		</div>
+	  </footer>
 
 
   <!-- loader -->
