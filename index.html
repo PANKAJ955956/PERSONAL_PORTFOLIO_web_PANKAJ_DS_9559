@@ -137,25 +137,36 @@
 	      </div>
 	    </div>
 	  </nav>
-    
 <section id="home-section" class="hero">
   <style>
-    /* Force home-section to behave like flexbox */
+    /* Main row (desktop default) */
     #home-section .row {
       display: flex;
-      flex-direction: row !important;
+      flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: nowrap !important; /* prevents stacking */
+      flex-wrap: nowrap;
     }
 
     /* Image column */
     #home-section .one-third.img {
       flex: 1;
       min-width: 200px;
-      max-width: 40%; /* keep image smaller */
+      max-width: 40%;
       background-size: cover;
       background-position: center;
+      position: relative;
+    }
+
+    /* Overlay inside image */
+    #home-section .one-third.img .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.2); /* light overlay */
+      z-index: 1;
     }
 
     /* Text column */
@@ -163,33 +174,39 @@
       flex: 1;
       max-width: 60%;
       padding: 20px;
+      z-index: 2; /* ensures text is above overlay */
     }
 
     /* Mobile view adjustments */
     @media (max-width: 768px) {
       #home-section .row {
-        flex-direction: row !important; /* keep side-by-side */
+        flex-direction: column; /* stack image above text */
       }
 
       #home-section .one-third.img {
-        max-width: 40%;
-        min-height: 200px; /* small fixed height */
+        max-width: 100%;
+        min-height: 280px;
+        order: -1; /* show image first */
       }
 
       #home-section .one-forth {
-        max-width: 60%;
-        font-size: 14px;
+        max-width: 100%;
+        padding: 15px;
+        text-align: center;
       }
 
       #home-section .one-forth h1 {
-        font-size: 20px;
+        font-size: 22px;
+      }
+
+      #typing-animation {
+        font-size: 16px;
       }
     }
   </style>
 
   <div class="home-slider owl-carousel">
     <div class="slider-item">
-      <div class="overlay"></div>
       <div class="container">
         <div
           class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
@@ -223,16 +240,14 @@
                 // Create an array of typing text
                 const typingTexts = ["Student  ", "Engineer  ", "Analyst   "];
 
-                // Create a function to display the typing animation for a given text
+                // Function to play typing animation
                 function playTypingAnimation(text) {
-                  // Loop through each character and add it to the element
                   for (let i = 0; i < text.length; i++) {
                     setTimeout(() => {
                       typingAnimationElement.textContent += text[i];
-                    }, i * 200); // Increase the delay to slow down the typing animation
+                    }, i * 200);
                   }
 
-                  // Once the animation is complete, reset the text and start over
                   setTimeout(() => {
                     typingAnimationElement.textContent = "";
                     playTypingAnimation(
@@ -243,7 +258,7 @@
                   }, text.length * 200);
                 }
 
-                // Start the typing animation loop
+                // Start the typing animation
                 playTypingAnimation(typingTexts[0]);
               </script>
 
@@ -251,7 +266,7 @@
               <h2>A Data Analyst</h2>
 
               <!-- Social Buttons -->
-              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content:center;">
                 <a
                   href="https://www.linkedin.com/in/pankaj-kumar-472a29294/"
                   class="btn btn-primary py-3 px-4"
@@ -276,6 +291,7 @@
     </div>
   </div>
 </section>
+
 
 
 
