@@ -138,72 +138,59 @@
 	    </div>
 	  </nav>
 <section id="home-section" class="hero">
-  <style>
-    /* Main row (desktop default) */
-    #home-section .row {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: nowrap;
-    }
+<style>
+/* Typing animation container */
+#typing-animation {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  border-right: 3px solid #ffbd39; /* blinking cursor */
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+  animation: blink 0.7s infinite;
+  margin-top: 10px;
+}
 
-    /* Image column */
-    #home-section .one-third.img {
-      flex: 1;
-      min-width: 200px;
-      max-width: 40%;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+</style>
 
-    /* Overlay inside image */
-    #home-section .one-third.img .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.2); /* light overlay */
-      z-index: 1;
-    }
+<script>
+const typingElement = document.getElementById("typing-animation");
+const typingTexts = ["Student", "Engineer", "Analyst"];
+let textIndex = 0;
+let charIndex = 0;
 
-    /* Text column */
-    #home-section .one-forth {
-      flex: 1;
-      max-width: 60%;
-      padding: 20px;
-      z-index: 2; /* ensures text is above overlay */
-    }
+function typeEffect() {
+  if (charIndex < typingTexts[textIndex].length) {
+    typingElement.textContent += typingTexts[textIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeEffect, 150);
+  } else {
+    setTimeout(eraseEffect, 1200); // wait before erasing
+  }
+}
 
-    /* Mobile view adjustments */
-    @media (max-width: 768px) {
-      #home-section .row {
-        flex-direction: column; /* stack image above text */
-      }
+function eraseEffect() {
+  if (charIndex > 0) {
+    typingElement.textContent = typingTexts[textIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(eraseEffect, 100);
+  } else {
+    textIndex = (textIndex + 1) % typingTexts.length; // move to next word
+    setTimeout(typeEffect, 300);
+  }
+}
 
-      #home-section .one-third.img {
-        max-width: 100%;
-        min-height: 280px;
-        order: -1; /* show image first */
-      }
+document.addEventListener("DOMContentLoaded", function () {
+  typeEffect();
+});
+</script>
 
-      #home-section .one-forth {
-        max-width: 100%;
-        padding: 15px;
-        text-align: center;
-      }
-
-      #home-section .one-forth h1 {
-        font-size: 22px;
-      }
-
-      #typing-animation {
-        font-size: 16px;
-      }
-    }
-  </style>
 
   <div class="home-slider owl-carousel">
     <div class="slider-item">
@@ -237,9 +224,6 @@
                 const typingAnimationElement =
                   document.getElementById("typing-animation");
 
-                // Create an array of typing text
-                const typingTexts = ["Student  ", "Engineer  ", "Analyst   "];
-
                 // Function to play typing animation
                 function playTypingAnimation(text) {
                   for (let i = 0; i < text.length; i++) {
@@ -261,7 +245,8 @@
                 // Start the typing animation
                 playTypingAnimation(typingTexts[0]);
               </script>
-
+              <!-- Removed redeclaration of typingTexts and reused the existing variable -->
+              <!-- The second script block is not needed, as the typing animation is already handled above -->
               <br /><br />
               <h2>A Data Analyst</h2>
 
