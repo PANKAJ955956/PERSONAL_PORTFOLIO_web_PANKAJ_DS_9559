@@ -446,6 +446,48 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
+.one-third.js-fullheight.img {
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+}
+
+@media (max-width: 768px) {
+  .one-third.js-fullheight.img {
+    min-height: 250px;
+  }
+}
+#typing-animation::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+@media (max-width: 768px) {
+  .EXPERIENCE-row {
+    flex-direction: column;
+    overflow-x: visible;
+  }
+  .EXPERIENCE-card {
+    max-width: 100%;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+.blog-entry:hover {
+  transform: translateY(-5px);
+  transition: 0.3s ease;
+}
+.btn-primary {
+  background: linear-gradient(45deg, #ffbd39, #ff6a00);
+  border: none;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
 .container {
   width: 100%;
   padding-right: 15px;
@@ -3225,6 +3267,86 @@ input[type="button"].btn-block {
     background-color: #e9ecef;
     border-left: inherit;
     border-radius: 0 0.25rem 0.25rem 0; }
+/* ===============================
+   GLOBAL FIXES FOR RESPONSIVENESS
+================================= */
+
+/* Hero section background */
+.slider-item .img {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+/* About section image fix */
+.about-mf .about-img img {
+  max-width: 100%;
+  height: auto;
+  margin-left: 0;
+  border-radius: 12px;
+}
+
+/* Typing animation scaling */
+#typing-animation {
+  font-size: 22px;
+  font-weight: 600;
+  white-space: normal; /* allow wrapping */
+  color: #ffcc00;
+}
+@media (min-width: 768px) {
+  #typing-animation {
+    font-size: 30px;
+    white-space: nowrap;
+  }
+}
+
+/* EXPERIENCE section fix */
+.EXPERIENCE-row {
+  display: flex;
+  flex-wrap: wrap;   /* stack on mobile */
+  gap: 20px;
+  justify-content: center;
+}
+.EXPERIENCE-card {
+  flex: 1 1 100%;
+  max-width: 350px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Progress bar fix */
+.skill-mf .progress {
+  height: 10px;
+  border-radius: 5px;
+}
+.skill-mf .progress-bar {
+  border-radius: 5px;
+}
+
+/* Counter fix */
+.counter-wrap .number {
+  font-size: 28px;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .counter-wrap .number {
+    font-size: 40px;
+  }
+}
+
+/* Buttons scaling */
+.btn {
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 10px 22px;
+}
+@media (max-width: 576px) {
+  .btn {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+}
+
 
 .custom-range {
   width: 100%;
